@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #30A5BF;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.analog-clock{
+    height: 500px;
+    width: 500px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 15px ridge #F2BE22;
+    position: relative;
+    box-shadow: rgba(50, 50, 93, 1) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    z-index: 10;
+}
+.analog-clock::before{
+    content: "Harizibam";
+    position: absolute;
+    font-size: 20px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow:rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.analog-clock::after{
+    content: " ";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: #F2BE22;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+.number{
+    --rotate:0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    transform: rotate(var(--rotate));
+    color: #185359;
+    font-weight: 500;
+
+}
+.number-1{--rotate:30deg;}
+.number-2{--rotate:60deg;}
+.number-3{--rotate:90deg;}
+.number-4{--rotate:120deg;}
+.number-5{--rotate:150deg;}
+.number-6{--rotate:180deg;}
+.number-7{--rotate:210deg;}
+.number-8{--rotate:240deg;}
+.number-9{--rotate:270deg;}
+.number-10{--rotate:300deg;}
+.number-11{--rotate:330deg;}
+
+.needle{
+    --rotation:0;
+    position: absolute;
+    height: 40%;
+    width: 10px;
+    
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+
+}
+.sec{
+    background-color: black;
+    width: 3px;
+    height: 45%;
+    
+}
+.mins{
+    background-color: black;
+    width: 7px;
+    height: 40%;
+    
+
+}
+.hrs{
+    background-color: black;
+    width: 10px;
+    height: 25%;
+    
+}
